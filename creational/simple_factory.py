@@ -1,12 +1,15 @@
 """
 simple factory implementation
 """
+from abc import ABC, abstractmethod
 
 
-class Door:
+class Door(ABC):
+    @abstractmethod
     def getWidth(self):
         pass
 
+    @abstractmethod
     def getHeight(self):
         pass
 
