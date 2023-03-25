@@ -6,37 +6,35 @@ from abc import ABC, abstractmethod
 
 class Door(ABC):
     @abstractmethod
-    def getWidth(self):
+    def get_width(self):
         pass
 
     @abstractmethod
-    def getHeight(self):
+    def get_height(self):
         pass
 
 
 class WoodenDoor(Door):
-    width = None
-    height = None
 
     def __init__(self, width=5, height=5):
         self.width = width
         self.height = height
 
-    def getWidth(self):
+    def get_width(self):
         return self.width
 
-    def getHeight(self):
+    def get_height(self):
         return self.height
 
 
 class DoorFactory:
 
     @staticmethod
-    def makeDoor(width, height):
+    def make_door(width, height):
         return WoodenDoor(width, height)
 
 
 if __name__ == '__main__':
-    door = DoorFactory.makeDoor(10, 10)
-    print(door.getHeight())
-    print(door.getWidth())
+    door = DoorFactory.make_door(10, 10)
+    print(door.get_height())
+    print(door.get_width())
